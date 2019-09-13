@@ -1,50 +1,56 @@
 {
-    "name": "zarei/user-agent-parser",
-    "description": "Get user's software and hardware information like Device, CPU, OS, Browser, Engine from user agent string",
-    "authors": [
-        {
-            "name": "Mahdi Zarei",
-            "email": "ymgsmz@gmail.com"
-        }
-    ],
-    "keywords": [
-        "laravel",
-        "php",
-        "UA",
-        "user-agent",
-        "browser",
-        "operation-system",
-        "device",
-        "browser-engine",
-        "cpu-architecture",
-        "detector"
-    ],
-    "require": {
-        "php" : "^7.2",
-        "illuminate/support": ">=5.7"
+  "name": "zarei/user-agent-parser",
+  "description": "Get user's software and hardware information like Device, CPU, OS, Browser, Engine from user agent string",
+  "authors": [
+    {
+      "name": "Mahdi Zarei",
+      "email": "ymgsmz@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/ymgsmz/UserAgentParser",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "php",
+    "UA",
+    "user-agent",
+    "browser",
+    "operation-system",
+    "device",
+    "browser-engine",
+    "cpu-architecture",
+    "detector"
+  ],
+  "require": {
+    "php": "^7.2",
+    "illuminate/support": ">=5.7"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0",
+    "php-coveralls/php-coveralls": "^2.1"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Zarei\\UserAgentParser\\UserAgentServiceProvider"
+      ],
+      "aliases": {
+        "UserAgentParser": "Zarei\\UserAgentParser\\Facades\\UserAgentParser"
+      }
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Zarei\\UserAgentParser\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Zarei\\UserAgentParser\\Tests\\": "tests/"
     },
-    "require-dev": {
-        "orchestra/testbench": "^4.0"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Zarei\\UserAgent\\UserAgentServiceProvider"
-            ]
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Zarei\\UserAgentParser\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Zarei\\UserAgentParser\\Tests\\": "tests/"
-        },
-        "classmap": [
-            "tests"
-        ]
-    },
-    "minimum-stability": "stable"
+    "classmap": [
+      "tests"
+    ]
+  },
+  "minimum-stability": "stable"
 }
