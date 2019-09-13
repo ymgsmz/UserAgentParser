@@ -1,4 +1,7 @@
-# UserAgentParser
+UserAgentParser
+=
+[![Build Status](https://travis-ci.org/ymgsmz/UserAgentParser.svg)](https://travis-ci.org/ymgsmz/UserAgentParser/)
+
 User agent parser for Laravel.
 
 Installation
