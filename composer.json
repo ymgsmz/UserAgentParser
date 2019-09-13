@@ -22,7 +22,7 @@
     "detector"
   ],
   "require": {
-    "php": "^7.2",
+    "php": "^7.3",
     "illuminate/support": ">=5.7"
   },
   "require-dev": {
