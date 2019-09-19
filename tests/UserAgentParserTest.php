@@ -3,11 +3,6 @@
 namespace Zarei\UserAgentParser\Tests;
 
 use Zarei\UserAgentParser\Entities\Browser;
-use Zarei\UserAgentParser\Detectors\BrowserDetector;
-use Zarei\UserAgentParser\Detectors\CpuDetector;
-use Zarei\UserAgentParser\Detectors\DeviceDetector;
-use Zarei\UserAgentParser\Detectors\EngineDetector;
-use Zarei\UserAgentParser\Detectors\OsDetector;
 use Zarei\UserAgentParser\Entities\Cpu;
 use Zarei\UserAgentParser\Entities\Device;
 use Zarei\UserAgentParser\Entities\Engine;
@@ -230,7 +225,7 @@ class UserAgentParserTest extends TestCase
                 if ($key == 'browserVersion')
                     $this->expected->setVersion($value);
             }
-            $this->assertEquals($this->expected, $this->detector->browser);
+            $this->assertEquals($this->expected, $this->detector->browser());
         }
     }
 
@@ -245,7 +240,7 @@ class UserAgentParserTest extends TestCase
                 if ($key == 'osVersion')
                     $this->expected->setVersion($value);
             }
-            $this->assertEquals($this->expected, $this->detector->os);
+            $this->assertEquals($this->expected, $this->detector->os());
         }
     }
 
@@ -258,7 +253,7 @@ class UserAgentParserTest extends TestCase
                 if ($key == 'architecture')
                     $this->expected->setArchitecture($value);
             }
-            $this->assertEquals($this->expected, $this->detector->cpu);
+            $this->assertEquals($this->expected, $this->detector->cpu());
         }
     }
 
@@ -275,7 +270,7 @@ class UserAgentParserTest extends TestCase
                 if ($key == 'deviceModel')
                     $this->expected->setModel($value);
             }
-            $this->assertEquals($this->expected, $this->detector->device);
+            $this->assertEquals($this->expected, $this->detector->device());
         }
     }
 
@@ -290,7 +285,7 @@ class UserAgentParserTest extends TestCase
                 if ($key == 'engineVersion')
                     $this->expected->setVersion($value);
             }
-            $this->assertEquals($this->expected, $this->detector->engine);
+            $this->assertEquals($this->expected, $this->detector->engine());
         }
     }
 }

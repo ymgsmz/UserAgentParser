@@ -44,19 +44,19 @@ class UserAgentParser
     private $engineDetector;
 
     /** @var Device */
-    public $device;
+    private $device;
 
     /** @var Cpu */
-    public $cpu;
+    private $cpu;
 
     /** @var Os */
-    public $os;
+    private $os;
 
     /** @var Browser */
-    public $browser;
+    private $browser;
 
     /** @var Engine */
-    public $engine;
+    private $engine;
 
     /**
      * Initialize detector classes.
@@ -146,5 +146,50 @@ class UserAgentParser
         $deviceDetector = new DeviceDetector();
 
         $this->device = $deviceDetector->detect($this->ua);
+    }
+
+    /**
+     * get device property
+     * @return Device
+     */
+    public function device(): Device
+    {
+        return $this->device;
+    }
+
+    /**
+     * get cpu property
+     * @return Cpu
+     */
+    public function cpu(): Cpu
+    {
+        return $this->cpu;
+    }
+
+    /**
+     * get os property
+     * @return Os
+     */
+    public function os(): Os
+    {
+        return $this->os;
+    }
+
+    /**
+     * get browser property
+     * @return Browser
+     */
+    public function browser(): Browser
+    {
+        return $this->browser;
+    }
+
+    /**
+     * get engine property
+     * @return Engine
+     */
+    public function engine(): Engine
+    {
+        return $this->engine;
     }
 }
