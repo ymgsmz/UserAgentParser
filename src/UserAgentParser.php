@@ -90,6 +90,15 @@ class UserAgentParser
     }
 
     /**
+     * Extract data from requesting UA string
+     * @return UserAgentParser
+     */
+    public function get(): UserAgentParser
+    {
+        return $this->parse(request()->userAgent());
+    }
+
+    /**
      * Start operation system detection
      */
     private function detectOs()
