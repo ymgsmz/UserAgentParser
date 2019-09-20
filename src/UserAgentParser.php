@@ -8,6 +8,7 @@
 namespace Zarei\UserAgentParser;
 
 
+use Illuminate\Foundation\Application;
 use Zarei\UserAgentParser\Detectors\BrowserDetector;
 use Zarei\UserAgentParser\Detectors\CpuDetector;
 use Zarei\UserAgentParser\Detectors\DeviceDetector;
@@ -95,7 +96,13 @@ class UserAgentParser
      */
     public function get(): UserAgentParser
     {
-        return $this->parse(request()->userAgent());
+        if ($this->isUsingLaravel())
+            return $this->parse(request()->userAgent());
+        else {
+            $request = app('request');
+            return $this->parse($request->userAgent());
+        }
+
     }
 
     /**
@@ -191,5 +198,14 @@ class UserAgentParser
     public function engine(): Engine
     {
         return $this->engine;
+    }
+
+    /**
+     * check framework foundation
+     * @return bool
+     */
+    private function isUsingLaravel()
+    {
+        return app() instanceof Application ? true : false;
     }
 }
