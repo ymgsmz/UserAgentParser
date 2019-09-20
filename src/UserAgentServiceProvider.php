@@ -19,12 +19,12 @@ class UserAgentServiceProvider extends ServiceProvider
     /** {@inheritDoc} */
     public function register()
     {
-        $this->app->bind('useragent', UserAgentParser::class);
+        $this->app->bind('useragentparser', UserAgentParser::class);
     }
 
     /** {@inheritDoc} */
     public function provides()
     {
-        return ['useragent'];
+        return ['useragentparser'];
     }
 }

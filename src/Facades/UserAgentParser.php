@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Facade;
  * Class UserAgentParser
  * @package Zarei\UserAgentParser\Facades
  * @method static \Zarei\UserAgentParser\UserAgentParser parse(string $userAgent)
+ * @method static \Zarei\UserAgentParser\UserAgentParser get()
  */
 class UserAgentParser extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'useragent';
+        return 'useragentparser';
     }
 }
