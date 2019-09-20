@@ -19,6 +19,6 @@ class UserAgentParser extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'useragent';
+        return 'useragentparser';
     }
 }
